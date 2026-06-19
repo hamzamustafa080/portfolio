@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamza Mustafa | Data Analyst Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+background:#070b1a;
+color:white;
+overflow-x:hidden;
+}
+
+/* BACKGROUND */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* NAV */
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 60px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+z-index:999;
+}
+
+header h2{color:#00e5ff;}
+
+nav a{
+color:white;
+margin-left:18px;
+text-decoration:none;
+opacity:0.8;
+font-size:14px;
+}
+nav a:hover{color:#00e5ff;opacity:1;}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 80px;
+}
+
+.hero-text{
+max-width:650px;
+}
+
+.hero-text h1{
+font-size:52px;
+}
+
+.hero-text span{color:#00e5ff;}
+
+.hero-text p{
+margin-top:15px;
+color:#cfd8ff;
+line-height:1.7;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 22px;
+background:linear-gradient(135deg,#00e5ff,#7c4dff);
+border-radius:10px;
+color:white;
+text-decoration:none;
+}
+
+/* IMAGE */
+.hero img{
+width:340px;
+border-radius:50%;
+border:4px solid #00e5ff;
+}
+
+/* SECTION */
+section{
+padding:90px 80px;
+}
+
+.title{
+text-align:center;
+font-size:34px;
+color:#00e5ff;
+margin-bottom:40px;
+}
+
+/* ABOUT */
+.about{
+background:rgba(255,255,255,0.04);
+padding:35px;
+border-radius:16px;
+line-height:1.8;
+}
+
+/* SKILLS */
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+}
+
+.skill{
+background:rgba(255,255,255,0.05);
+padding:15px;
+text-align:center;
+border-radius:10px;
+}
+
+/* PROJECTS */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border-radius:14px;
+overflow:hidden;
+}
+
+.card img{width:100%;height:160px;object-fit:cover;}
+
+.card-content{padding:15px;}
+
+.card h3{color:#00e5ff;}
+
+.card p{font-size:14px;line-height:1.6;margin-top:8px;}
+
+.card ul{
+margin-top:10px;
+font-size:13px;
+color:#cfd8ff;
+}
+
+/* FEEDBACK */
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.testimonial{
+background:rgba(255,255,255,0.05);
+padding:18px;
+border-left:4px solid #00e5ff;
+border-radius:10px;
+line-height:1.6;
+color:#d6ddff;
+}
+
+/* CONTACT */
+/* CONTACT */
+.contact{
+background:rgba(255,255,255,0.04);
+padding:40px;
+border-radius:16px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+background:#11172f;
+color:white;
+}
+
+/* FAQ */
+.faq-item{
+background:rgba(255,255,255,0.05);
+margin-bottom:10px;
+padding:15px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+margin-top:10px;
+color:#cfd8ff;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#050817;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<header>
+<h2>Hamza Mustafa</h2>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-text">
+<h1>Hamza Mustafa<br><span>Data Analyst</span></h1>
+<p>Transforming business data into actionable insights using SQL, Power BI, AWS, Snowflake, and AI analytics.</p>
+<a class="btn" href="#projects">Explore Work</a>
+</div>
+<!----<img src="https://via.placeholder.com/400">------------->
+<img src="profile.png">
+ <!--------    alt="Data Analytics"style="width:100%; max-width:500px; border-radius:10px;">---------->
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 class="title">About Me</h2>
+<div class="about">I am a Data Analyst with a Bachelor’s degree in Business Analysis from the University of Central Punjab (UCP), Pakistan. 
+I specialize in transforming raw and complex datasets into meaningful, actionable business insights that support strategic decision-making.
+My expertise lies in data-driven analytics, dashboard development, and cloud-based data solutions using tools such as SQL, Power BI, AWS, 
+Snowflake, and Python. I focus on building interactive dashboards and automated reporting systems that help organizations track performance, 
+identify trends, and improve operational efficiency. I have hands-on experience in designing data models, optimizing queries, and developing 
+ETL pipelines for scalable analytics systems. My goal is to bridge the gap 
+between data and business by delivering clear, accurate, and visually compelling insights that drive profitability, growth, and smarter decision-making.</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2 class="title">Skills</h2>
+<div class="skills">
+<div class="skill">SQL</div>
+<div class="skill">Power BI</div>
+<div class="skill">AWS</div>
+<div class="skill">Snowflake</div>
+<div class="skill">Python</div>
+<div class="skill">Data Visualization</div>
+<div class="skill">Data Analytics</div>
+<div class="skill">AI Models</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2 class="title">Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+<div class="card-content">
+<h3>Sales Analytics Dashboard</h3>
+<p>Built interactive Power BI dashboard to track KPIs, revenue trends, and forecasting.</p>
+<ul>
+<li>Skills: Power BI, DAX, SQL</li>
+<li>Created executive-level reporting system</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+<div class="card-content">
+<h3>Snowflake Data Warehouse</h3>
+<p>Designed scalable cloud warehouse architecture for enterprise analytics.</p>
+<ul>
+<li>Skills: Snowflake, SQL, Data Modeling</li>
+<li>Optimized query performance by 40%</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
+<div class="card-content">
+<h3>AWS ETL Pipeline</h3>
+<p>Automated data pipeline using AWS S3, Lambda, and Redshift for real-time analytics.</p>
+<ul>
+<li>Skills: AWS, ETL, Python</li>
+<li>Reduced manual processing time by 70%</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb">
+<div class="card-content">
+<h3>AI Customer Churn Model</h3>
+<p>Machine learning model predicting customer churn using historical behavior data.</p>
+<ul>
+<li>Skills: Python, ML, Pandas</li>
+<li>Improved retention strategy accuracy</li>
+</ul>
+</div>
+</div>
+
+<!-- NEW PROJECTS -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2">
+<div class="card-content">
+<h3>Retail Performance BI System</h3>
+<p>Built complete BI system for retail chain to monitor sales and inventory.</p>
+<ul>
+<li>Skills: Power BI, SQL, Data Visualization</li>
+<li>Improved decision speed by 35%</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+<div class="card-content">
+<h3>Customer Segmentation Model</h3>
+<p>Segmented customers using clustering techniques for targeted marketing.</p>
+<ul>
+<li>Skills: Python, Scikit-learn, ML</li>
+<li>Enhanced marketing ROI significantly</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+<div class="card-content">
+<h3>Executive BI Reporting System</h3>
+<p>Designed automated reporting system for executives with real-time KPIs.</p>
+<ul>
+<li>Skills: Power BI, SQL, AWS</li>
+<li>Reduced reporting time from hours to minutes</li>
+</ul>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FEEDBACK -->
+<section>
+<h2 class="title">Client Feedback</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+“Hamza delivered excellent dashboards with clear insights that helped our leadership team make faster decisions. His understanding of business KPIs is impressive.”
+</div>
+
+<div class="testimonial">
+“He built our AWS pipeline with great efficiency. Data processing speed improved significantly and everything became fully automated.”
+</div>
+
+<div class="testimonial">
+“Highly professional work in Power BI and Snowflake. He understands both technical and business sides very well.”
+</div>
+
+<div class="testimonial">
+“Very reliable analyst. Always delivers on time with clean documentation and excellent communication throughout the project.”
+</div>
+
+</div>
+</section>
+
+<!-- FAQ -->
+<!-- FAQ -->
+<section>
+<h2 class="title">FAQs</h2>
+
+<div class="faq-item" onclick="toggle(this)">
+<b>What tools and technologies do you specialize in?</b>
+<div class="faq-answer">
+I specialize in SQL, Power BI, AWS, Snowflake, Python, and Excel for data analysis and business intelligence.
+I also work with data visualization techniques, ETL pipelines, and basic machine learning models.
+My focus is on building scalable and efficient data solutions for real-world business problems.
+</div>
+</div>
+
+<div class="faq-item" onclick="toggle(this)">
+<b>What kind of projects have you worked on?</b>
+<div class="faq-answer">
+I have worked on sales dashboards, customer segmentation models, cloud data warehouses, and automated ETL pipelines.
+These projects involve data cleaning, transformation, modeling, and visualization using modern BI tools.
+Each project is designed to improve decision-making and business performance through insights.
+</div>
+</div>
+
+<div class="faq-item" onclick="toggle(this)">
+<b>Do you work on freelance or client-based projects?</b>
+<div class="faq-answer">
+Yes, I am available for freelance and client-based work in data analytics and BI development.
+I can build dashboards, automate reporting systems, and design cloud-based data solutions.
+I ensure timely delivery, clean documentation, and clear communication throughout the project lifecycle.
+</div>
+</div>
+
+<div class="faq-item" onclick="toggle(this)">
+<b>Can you handle large-scale or enterprise data systems?</b>
+<div class="faq-answer">
+Yes, I can work with large datasets and enterprise-level systems using AWS and Snowflake.
+I design optimized data models and scalable architectures to ensure high performance and reliability.
+My goal is to build systems that are both efficient and easy to maintain.
+</div>
+</div>
+
+<div class="faq-item" onclick="toggle(this)">
+<b>How do you approach a new data analytics project?</b>
+<div class="faq-answer">
+I start by understanding business requirements and identifying key KPIs.
+Then I clean and prepare the data, followed by analysis, modeling, and visualization.
+Finally, I deliver interactive dashboards or reports that provide actionable insights for decision-makers.
+</div>
+</div>
+
+</section>
+
+
+
+
+<!-- CONTACT -->
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="title">Contact Me</h2>
+
+<div class="contact">
+<div class="contact-grid">
+
+<div>
+<input placeholder="Your Name">
+<input placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+
+<button class="btn" onclick="sendMessage()">
+Send Message
+</button>
+</div>
+
+<div>
+<p>📧 hmurtaza080@gmail.com</p>
+<p>📱 +92 3174234618</p>
+<p>🔗 LinkedIn</p>
+<a class="btn" href="https://wa.me/923174234618" target="_blank">
+Chat on WhatsApp
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<footer>
+© 2026 Hamza Mustafa | Data Analyst Portfolio
+</footer>
+
+<script>
+// background animation
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let dots=[];
+for(let i=0;i<90;i++){
+dots.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*0.6,
+vy:(Math.random()-0.5)*0.6
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+dots.forEach(d=>{
+ctx.fillStyle="#00e5ff";
+ctx.beginPath();
+ctx.arc(d.x,d.y,2,0,Math.PI*2);
+ctx.fill();
+});
+
+for(let i=0;i<dots.length;i++){
+for(let j=i;j<dots.length;j++){
+let dx=dots[i].x-dots[j].x;
+let dy=dots[i].y-dots[j].y;
+let dist=Math.sqrt(dx*dx+dy*dy);
+
+if(dist<120){
+ctx.strokeStyle="rgba(0,229,255,0.08)";
+ctx.beginPath();
+ctx.moveTo(dots[i].x,dots[i].y);
+ctx.lineTo(dots[j].x,dots[j].y);
+ctx.stroke();
+}
+}
+}
+
+dots.forEach(d=>{
+d.x+=d.vx;
+d.y+=d.vy;
+if(d.x<0||d.x>canvas.width)d.vx*=-1;
+if(d.y<0||d.y>canvas.height)d.vy*=-1;
+});
+}
+
+function animate(){
+draw();
+requestAnimationFrame(animate);
+}
+animate();
+
+// FAQ toggle
+function toggle(el){
+let ans=el.querySelector(".faq-answer");
+ans.style.display = ans.style.display==="block" ? "none" : "block";
+}
+</script>
+
+
+<script>
+
+/* SEND MESSAGE TO WHATSAPP */
+function sendMessage(){
+
+let name = document.querySelector("input[placeholder='Your Name']").value;
+let email = document.querySelector("input[placeholder='Your Email']").value;
+let message = document.querySelector("textarea").value;
+
+if(!name || !email || !message){
+alert("Please fill all fields!");
+return;
+}
+
+let phone = "923174234618";
+
+let text = `Hello Hamza,%0A
+Name: ${name}%0A
+Email: ${email}%0A
+Message: ${message}`;
+
+let url = `https://wa.me/${phone}?text=${text}`;
+
+window.open(url, "_blank");
+
+/* AUTO CLEAR FORM */
+document.querySelector("input[placeholder='Your Name']").value = "";
+document.querySelector("input[placeholder='Your Email']").value = "";
+document.querySelector("textarea").value = "";
+
+}
+
+/* BACKGROUND ANIMATION */
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let dots=[];
+for(let i=0;i<80;i++){
+dots.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5),
+vy:(Math.random()-0.5)
+});
+}
+
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+dots.forEach(d=>{
+ctx.fillStyle="#00e5ff";
+ctx.beginPath();
+ctx.arc(d.x,d.y,2,0,Math.PI*2);
+ctx.fill();
+
+d.x+=d.vx;
+d.y+=d.vy;
+
+if(d.x<0||d.x>canvas.width)d.vx*=-1;
+if(d.y<0||d.y>canvas.height)d.vy*=-1;
+});
+
+requestAnimationFrame(animate);
+}
+animate();
+
+</script>
+
+</body>
+</html>
