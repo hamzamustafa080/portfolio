@@ -76,6 +76,19 @@ line-height:1;
 user-select:none;
 }
 
+/* Mobile nav default state — set unconditionally so it cannot be
+   accidentally overridden by being inside a media query that fails
+   to apply. JS also sets this directly as a second safety net. */
+@media (max-width: 768px){
+  .nav-menu{ display:none !important; }
+  .nav-menu.active{ display:flex !important; }
+  .menu-toggle{ display:block !important; }
+}
+@media (min-width: 769px){
+  .menu-toggle{ display:none !important; }
+  .nav-menu{ display:flex !important; }
+}
+
 /* ===== HERO ===== */
 .hero{
 min-height:100vh;
@@ -84,6 +97,8 @@ justify-content:space-between;
 align-items:center;
 gap:40px;
 padding:140px 80px 60px;
+position:relative;
+z-index:1;
 }
 
 .hero-text{
@@ -332,7 +347,6 @@ display:block;
 }
 
 .nav-menu{
-display:none;
 flex-direction:column;
 align-items:flex-start;
 background:rgba(7,11,26,0.97);
@@ -345,10 +359,6 @@ border-radius:12px;
 gap:14px;
 z-index:1000;
 box-shadow:0 14px 30px rgba(0,0,0,0.4);
-}
-
-.nav-menu.active{
-display:flex;
 }
 
 .nav-menu a{
@@ -709,23 +719,46 @@ Chat on WhatsApp
 </footer>
 
 <script>
-/* MOBILE MENU TOGGLE */
+/* ===== BULLETPROOF MOBILE NAV =====
+   This sets display directly via inline style so it always wins,
+   regardless of any CSS specificity/cascade issue elsewhere on the page. */
+const navMenu = document.getElementById('nav-menu');
+const menuToggleBtn = document.getElementById('menuToggle');
+
+function applyNavState(){
+  if(window.innerWidth <= 768){
+    // mobile: hidden unless .active
+    navMenu.style.display = navMenu.classList.contains('active') ? 'flex' : 'none';
+    menuToggleBtn.style.display = 'block';
+  } else {
+    // desktop: always visible, ignore active state
+    navMenu.style.display = 'flex';
+    menuToggleBtn.style.display = 'none';
+  }
+}
+
 function toggleMenu(){
-  document.getElementById('nav-menu').classList.toggle('active');
+  navMenu.classList.toggle('active');
+  applyNavState();
 }
 function closeMenu(){
-  document.getElementById('nav-menu').classList.remove('active');
+  navMenu.classList.remove('active');
+  applyNavState();
 }
 
-/* close menu if clicking outside it */
+applyNavState();
+window.addEventListener('resize', applyNavState);
+window.addEventListener('DOMContentLoaded', applyNavState);
+
 document.addEventListener('click', function(e){
-  const menu = document.getElementById('nav-menu');
-  const toggle = document.getElementById('menuToggle');
-  if(menu.classList.contains('active') && !menu.contains(e.target) && !toggle.contains(e.target)){
-    menu.classList.remove('active');
+  if(navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuToggleBtn.contains(e.target)){
+    navMenu.classList.remove('active');
+    applyNavState();
   }
 });
+</script>
 
+<script>
 /* SEND MESSAGE TO WHATSAPP */
 function sendMessage(){
   let name = document.querySelector("input[placeholder='Your Name']").value;
