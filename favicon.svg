@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#070b1a"></rect>
+  
+  <!-- Bars -->
+  <rect x="14" y="34" width="6" height="18" fill="#00e5ff"></rect>
+  <rect x="28" y="24" width="6" height="28" fill="#7c4dff"></rect>
+  <rect x="42" y="14" width="6" height="38" fill="#00e5ff"></rect>
+
+  <!-- Line graph -->
+  <polyline points="14,40 31,28 45,18 54,10" fill="none" stroke="#ffffff" stroke-width="2"></polyline>
+</svg>
